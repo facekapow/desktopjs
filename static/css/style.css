@@ -1,0 +1,54 @@
+#appbar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  min-width: 100px;
+  min-height: 120px;
+}
+
+.appshort a {
+  text-decoration: none;
+}
+
+.appshort {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 100px;
+  min-height: 120px;
+  text-align: center;
+  font-family: "Arvo", serif;
+  display: inline-block;
+}
+
+.appshort img {
+  width: 100px;
+  height: 100px;
+}
+
+#desktop {
+  top: 0;
+  left: 0;
+  min-width: 1000px;
+}
+
+.titlebar {
+  text-align: center;
+}
+
+.app-window {
+
+}
+
+.inner-window {
+
+}
+
+.titlename {
+
+}
+
+.titleclose {
+  text-decoration: none;
+  float: right;
+  margin-right: 3px;
+}

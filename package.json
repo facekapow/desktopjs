@@ -1,0 +1,31 @@
+{
+  "name": "desktopjs",
+  "version": "0.0.1",
+  "description": "A JS dekstop for the browser with a Node.js backend",
+  "main": "backend.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "socket.io": "^1.3.5",
+    "express": "^4.12.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"foo\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArielAbreu/desktopjs.git"
+  },
+  "author": "ArielAbreu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArielAbreu/desktopjs/issues"
+  },
+  "homepage": "https://github.com/ArielAbreu/desktopjs#readme",
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*"
+  }
+}
