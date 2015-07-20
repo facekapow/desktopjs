@@ -14,16 +14,13 @@ Clone the repo, `cd` into it and:
 bower update
 npm install
 # done with desktopjs deps, now onto application deps:
-cd apps/files
-bower update
+./app-deps.sh
 # done with dependencies
-cd ../../
-# now we're back in the root repo directory
 sudo node backend.js # for node
 # OR
 sudo iojs backend.js # for iojs
 ```
-Then open up your browser (desktopjs has only been tested with Google Chrome, so if you're not using Google Chrome, don't complain) and go to [localhost](http://localhost).
+Then open up your browser (desktopjs has only been tested with Google Chrome, so if you're not using Google Chrome, don't complain if it doesn't work) and go to [localhost](http://localhost).
 
 ## Some info
 
