@@ -14,7 +14,7 @@ Clone the repo, `cd` into it and:
 bower update
 npm install
 # done with desktopjs deps, now onto application deps:
-sh app-deps.sh
+bash app-deps.sh
 # done with dependencies
 sudo node backend.js # for node
 # OR
