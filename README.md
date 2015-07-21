@@ -2,6 +2,16 @@
 
 ## Test it out
 
+### dpmjs
+
+You need `dpmjs`, the desktopjs package manager, in order to install desktop.js apps. To install it, do the following:
+```bash
+git clone https://github.com/ArielAbreu/dpm.git
+cd dpm
+sudo npm install -g ./
+cd ..
+```
+
 ### Requirements
   - [Bower](http://bower.io/)
   - [Node.js](https://nodejs.org/) OR [io.js](https://iojs.org/en/index.html)
@@ -13,9 +23,12 @@ Clone the repo, `cd` into it and:
 ```bash
 bower update
 npm install
-# done with desktopjs deps, now onto application deps:
-./app-deps.sh
-# done with dependencies
+# done with desktopjs deps, now let's install some apps
+dpm install files
+dpm install edit
+dpm install image
+dpm install term
+# now let's actually start the desktop
 sudo node backend.js # for node
 # OR
 sudo iojs backend.js # for iojs
