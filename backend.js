@@ -52,6 +52,7 @@ io.on('connection', function(socket) {
     socket.emit('load content', paths);
 
     socket.on('content loaded', function() {
+      console.log(app.routes);
       var jsproc = require(__dirname + '/apps/' + appl + '/index.js');
       jsproc.socketsend = function(data) {
         socket.emit('app data', {
@@ -67,21 +68,22 @@ io.on('connection', function(socket) {
         });
       }
 
-      jsproc.onGet = function(callback) {
+      jsproc.onget = function(callback) {
         app.get('/' + appl, function(req, res) {
           callback(req, res);
         });
       }
+
+      //jsproc.exposeFile = function()
 
       var appobj = {
         name: appl,
         proc: jsproc
       };
 
-      appobj.proc.main()
+      appobj.proc.main();
 
       appobj.proc.exitapp = function() {
-        console.log(app.stack);
         socket.emit('exit app', appl);
         delete require.cache[__dirname + '/apps/' + appl + '/index.js'];
       }
