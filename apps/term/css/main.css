@@ -1,0 +1,73 @@
+.term-output {
+  white-space: pre-wrap;
+  margin-left: 7px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: inline;
+}
+
+#term-output-3 {
+  margin-left: 7px;
+  float: left;
+}
+
+#term-full-cont {
+  color: white;
+  background-color: black;
+  width:800px;
+  height: 480px;
+}
+
+#term-input {
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  font-size: 15.7px;
+  background-color: black;
+  border: 0px;
+  width: 1px;
+  outline: 0;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+#term-input-cont:after {
+  content: '_';
+  opacity: 0;
+  animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#term-cont {
+  overflow: auto;
+  height: 400px;
+  width: 800px;
+}
+
+#term-window {
+  width: 800px;
+  background-color: grey;
+  color: white;
+  font-family: "Lucida Console", Monaco, monospace;
+  border: solid 3px black;
+  border-radius: 10px;
+}
+
+#term-window a {
+  color: black;
+}

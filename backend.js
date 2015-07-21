@@ -25,7 +25,7 @@ io.on('connection', function(socket) {
     var total_cont = '';
     var apps = fs.readdirSync('apps');
     for (var i = 0; i < apps.length; i++) {
-      if (apps[i] !== '.DS_Store') {
+      if (apps[i] !== '.DS_Store' && apps[i] !== 'apps.json') {
         app.use('/apps/' + apps[i] + '/asset/png', express.static('apps/' + apps[i] + '/asset/png'));
         var appbar_cont = fs.readFileSync('apps/' + apps[i] + '/appbar.html');
         total_cont += appbar_cont + '\n';

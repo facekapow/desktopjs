@@ -1,0 +1,14 @@
+{
+  "name": "files",
+  "version": "0.0.1",
+  "description": "desktop.js files app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"foo\""
+  },
+  "author": "ArielAbreu",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "*"
+  }
+}
