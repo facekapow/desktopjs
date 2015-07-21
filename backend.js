@@ -115,6 +115,7 @@ io.on('connection', function(socket) {
           if (!route.path) return;
           var path = route.path.substr(6);
           var appname = path.substr(0, path.indexOf('/'));
+          console.log(appname);
           switch (appname) {
             case appl:
               routes.splice(i, 1);
