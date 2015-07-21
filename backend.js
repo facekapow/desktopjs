@@ -52,11 +52,6 @@ io.on('connection', function(socket) {
     socket.emit('load content', paths);
 
     socket.on('content loaded', function() {
-      var routes = app._router.stack;
-      routes.forEach(function(route, i, routes) {
-        console.log(route);
-      });
-
       var jsproc = require(__dirname + '/apps/' + appl + '/index.js');
       jsproc.socketsend = function(data) {
         socket.emit('app data', {
@@ -89,11 +84,43 @@ io.on('connection', function(socket) {
 
       appobj.proc.exitapp = function() {
         socket.emit('exit app', appl);
+        // un-require it
         delete require.cache[__dirname + '/apps/' + appl + '/index.js'];
+        // remove the route:
+        var routes = app._router.stack;
+        routes.forEach(function(route, i, routes) {
+          var path = route.path.substr(6);
+          var appname = path.substr(0, path.indexOf('/'));
+          switch (appname) {
+            case appl:
+              routes.splice(i, 1);
+              break;
+            default:
+              break;
+          }
+        });
       }
 
       socket.on('data from ' + appl, function(dt) {
         jsproc.socketHandler(dt);
+      });
+
+      socket.on('app exited', function(appl) {
+        // un-require it
+        delete require.cache[__dirname + '/apps/' + appl + '/index.js'];
+        // remove the route:
+        var routes = app._router.stack;
+        routes.forEach(function(route, i, routes) {
+          var path = route.path.substr(6);
+          var appname = path.substr(0, path.indexOf('/'));
+          switch (appname) {
+            case appl:
+              routes.splice(i, 1);
+              break;
+            default:
+              break;
+          }
+        });
       });
 
       apps.push(appobj);
