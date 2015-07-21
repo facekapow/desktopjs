@@ -52,7 +52,11 @@ io.on('connection', function(socket) {
     socket.emit('load content', paths);
 
     socket.on('content loaded', function() {
-      console.log(app.routes);
+      var routes = app._router.stack;
+      routes.forEach(function(route, i, routes) {
+        console.log(route);
+      });
+
       var jsproc = require(__dirname + '/apps/' + appl + '/index.js');
       jsproc.socketsend = function(data) {
         socket.emit('app data', {
