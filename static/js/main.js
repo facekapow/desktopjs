@@ -109,7 +109,7 @@ $(function() {
       requirejs.undef(appl.jspath);
       $('script[src="' + appl.jspath + '"]').remove();
       apps.splice(getAppIndex(this.parentNode.parentNode.dataset.app), 1);
-      socket.emit('app exited', appl);
+      socket.emit('app exited', this.parentNode.parentNode.dataset.app);
     });
     // jqueryui
     $(appwindow).draggable({

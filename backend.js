@@ -89,6 +89,7 @@ io.on('connection', function(socket) {
         // remove the route:
         var routes = app._router.stack;
         routes.forEach(function(route, i, routes) {
+          if (!route.path) return;
           var path = route.path.substr(6);
           var appname = path.substr(0, path.indexOf('/'));
           switch (appname) {
@@ -110,14 +111,13 @@ io.on('connection', function(socket) {
         delete require.cache[__dirname + '/apps/' + appl + '/index.js'];
         // remove the route:
         var routes = app._router.stack;
-        routes.forEach(function(route, i) {
+        routes.forEach(function(route, i, routes) {
           if (!route.path) return;
           var path = route.path.substr(6);
           var appname = path.substr(0, path.indexOf('/'));
           switch (appname) {
             case appl:
-              app._router.stack.splice(i, 1);
-              console.log(app._router.stack);
+              routes.splice(i, 1);
               break;
             default:
               break;
