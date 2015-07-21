@@ -110,15 +110,14 @@ io.on('connection', function(socket) {
         delete require.cache[__dirname + '/apps/' + appl + '/index.js'];
         // remove the route:
         var routes = app._router.stack;
-        routes.forEach(function(route, i, routes) {
-          console.log(route.path || '');
+        routes.forEach(function(route, i) {
           if (!route.path) return;
           var path = route.path.substr(6);
           var appname = path.substr(0, path.indexOf('/'));
-          console.log(appname);
           switch (appname) {
             case appl:
-              routes.splice(i, 1);
+              app._router.stack.splice(i, 1);
+              console.log(app._router.stack);
               break;
             default:
               break;
