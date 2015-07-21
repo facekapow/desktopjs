@@ -111,6 +111,7 @@ io.on('connection', function(socket) {
         // remove the route:
         var routes = app._router.stack;
         routes.forEach(function(route, i, routes) {
+          if (!route.path) return;
           var path = route.path.substr(6);
           var appname = path.substr(0, path.indexOf('/'));
           switch (appname) {
