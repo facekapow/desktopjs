@@ -24,6 +24,7 @@ Clone the repo, `cd` into it and:
 bower update
 npm install
 # done with desktopjs deps, now let's install some apps
+mkdir apps
 dpm install files
 dpm install edit
 dpm install image
