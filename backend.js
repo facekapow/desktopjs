@@ -35,7 +35,7 @@ io.on('connection', function(socket) {
       socket.emit('appbar content', total_cont);
     } catch(e) {
       console.log('make sure you have a folder called \'apps\'.');
-      console.log('if you do, make sure there's a file called \'apps.json\'.');
+      console.log('if you do, make sure there\'s a file called \'apps.json\'.');
       console.log('if you have that, too, check it\'s contents to make sure it doesn\'t have extra apps you didn\'t install.');
       throw new Error('could not load applications!');
     }
