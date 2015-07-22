@@ -140,6 +140,15 @@ $(function() {
       apps[getAppIndex(path.name)].mod.socketsend = function(data) {
         socket.emit('data from ' + path.name, data);
       }
+      apps[getAppIndex(path.name)].mod.api = {
+        loadCSS: function(path) {
+          var style = document.createElement('link');
+          style.href = path;
+          style.type = 'text/css';
+          style.rel = 'stylesheet';
+          document.head.appendChild(style);
+        }
+      };
       apps[getAppIndex(path.name)].mod.main();
       socket.emit('content loaded');
     });
