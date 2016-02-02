@@ -6,7 +6,7 @@
 
 You need `dpmjs`, the desktopjs package manager, in order to install desktop.js apps. To install it, do the following:
 ```bash
-git clone https://github.com/ArielAbreu/dpm.git
+git clone https://github.com/facekapow/dpm.git
 cd dpm
 sudo npm install -g ./
 cd ..
